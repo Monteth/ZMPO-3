@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ZMPO_3.dir/main.cpp.o  -o ZMPO_3 
