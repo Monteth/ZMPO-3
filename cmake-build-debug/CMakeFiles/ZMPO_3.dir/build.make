@@ -81,17 +81,95 @@ CMakeFiles/ZMPO_3.dir/main.cpp.o.provides: CMakeFiles/ZMPO_3.dir/main.cpp.o.requ
 CMakeFiles/ZMPO_3.dir/main.cpp.o.provides.build: CMakeFiles/ZMPO_3.dir/main.cpp.o
 
 
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o: CMakeFiles/ZMPO_3.dir/flags.make
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o: ../Tree/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/monteth/Documents/CLionProjects/ZMPO-3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o -c /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.cpp
+
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.cpp > CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.i
+
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.cpp -o CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.s
+
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.requires:
+
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.requires
+
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.provides: CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.provides.build
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.provides
+
+CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.provides.build: CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o
+
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o: CMakeFiles/ZMPO_3.dir/flags.make
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o: ../Tree/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/monteth/Documents/CLionProjects/ZMPO-3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o -c /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.cpp
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.cpp > CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.i
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.cpp -o CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.s
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.requires:
+
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.requires
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.provides: CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.provides.build
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.provides
+
+CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.provides.build: CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o
+
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o: CMakeFiles/ZMPO_3.dir/flags.make
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o: ../Tree/Tools.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/monteth/Documents/CLionProjects/ZMPO-3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o -c /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.cpp
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.cpp > CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.i
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.cpp -o CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.s
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.requires:
+
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.requires
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.provides: CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.provides.build
+.PHONY : CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.provides
+
+CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.provides.build: CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o
+
+
 # Object files for target ZMPO_3
 ZMPO_3_OBJECTS = \
-"CMakeFiles/ZMPO_3.dir/main.cpp.o"
+"CMakeFiles/ZMPO_3.dir/main.cpp.o" \
+"CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o" \
+"CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o" \
+"CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o"
 
 # External object files for target ZMPO_3
 ZMPO_3_EXTERNAL_OBJECTS =
 
 ZMPO_3: CMakeFiles/ZMPO_3.dir/main.cpp.o
+ZMPO_3: CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o
+ZMPO_3: CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o
+ZMPO_3: CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o
 ZMPO_3: CMakeFiles/ZMPO_3.dir/build.make
 ZMPO_3: CMakeFiles/ZMPO_3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/monteth/Documents/CLionProjects/ZMPO-3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ZMPO_3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/monteth/Documents/CLionProjects/ZMPO-3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ZMPO_3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ZMPO_3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +178,9 @@ CMakeFiles/ZMPO_3.dir/build: ZMPO_3
 .PHONY : CMakeFiles/ZMPO_3.dir/build
 
 CMakeFiles/ZMPO_3.dir/requires: CMakeFiles/ZMPO_3.dir/main.cpp.o.requires
+CMakeFiles/ZMPO_3.dir/requires: CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o.requires
+CMakeFiles/ZMPO_3.dir/requires: CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o.requires
+CMakeFiles/ZMPO_3.dir/requires: CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o.requires
 
 .PHONY : CMakeFiles/ZMPO_3.dir/requires
 

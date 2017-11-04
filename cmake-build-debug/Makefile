@@ -123,6 +123,87 @@ ZMPO_3/fast:
 	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/build
 .PHONY : ZMPO_3/fast
 
+Tree/Node.o: Tree/Node.cpp.o
+
+.PHONY : Tree/Node.o
+
+# target to build an object file
+Tree/Node.cpp.o:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o
+.PHONY : Tree/Node.cpp.o
+
+Tree/Node.i: Tree/Node.cpp.i
+
+.PHONY : Tree/Node.i
+
+# target to preprocess a source file
+Tree/Node.cpp.i:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.i
+.PHONY : Tree/Node.cpp.i
+
+Tree/Node.s: Tree/Node.cpp.s
+
+.PHONY : Tree/Node.s
+
+# target to generate assembly for a file
+Tree/Node.cpp.s:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.s
+.PHONY : Tree/Node.cpp.s
+
+Tree/Tools.o: Tree/Tools.cpp.o
+
+.PHONY : Tree/Tools.o
+
+# target to build an object file
+Tree/Tools.cpp.o:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o
+.PHONY : Tree/Tools.cpp.o
+
+Tree/Tools.i: Tree/Tools.cpp.i
+
+.PHONY : Tree/Tools.i
+
+# target to preprocess a source file
+Tree/Tools.cpp.i:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.i
+.PHONY : Tree/Tools.cpp.i
+
+Tree/Tools.s: Tree/Tools.cpp.s
+
+.PHONY : Tree/Tools.s
+
+# target to generate assembly for a file
+Tree/Tools.cpp.s:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.s
+.PHONY : Tree/Tools.cpp.s
+
+Tree/Tree.o: Tree/Tree.cpp.o
+
+.PHONY : Tree/Tree.o
+
+# target to build an object file
+Tree/Tree.cpp.o:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o
+.PHONY : Tree/Tree.cpp.o
+
+Tree/Tree.i: Tree/Tree.cpp.i
+
+.PHONY : Tree/Tree.i
+
+# target to preprocess a source file
+Tree/Tree.cpp.i:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.i
+.PHONY : Tree/Tree.cpp.i
+
+Tree/Tree.s: Tree/Tree.cpp.s
+
+.PHONY : Tree/Tree.s
+
+# target to generate assembly for a file
+Tree/Tree.cpp.s:
+	$(MAKE) -f CMakeFiles/ZMPO_3.dir/build.make CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.s
+.PHONY : Tree/Tree.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ZMPO_3"
+	@echo "... Tree/Node.o"
+	@echo "... Tree/Node.i"
+	@echo "... Tree/Node.s"
+	@echo "... Tree/Tools.o"
+	@echo "... Tree/Tools.i"
+	@echo "... Tree/Tools.s"
+	@echo "... Tree/Tree.o"
+	@echo "... Tree/Tree.i"
+	@echo "... Tree/Tree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
