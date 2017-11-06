@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.cpp">
+			<Option target="ZMPO_3"/>
+		</Unit>
+		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h">
+			<Option target="ZMPO_3"/>
+		</Unit>
 		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.cpp">
 			<Option target="ZMPO_3"/>
 		</Unit>
@@ -102,7 +108,7 @@
 		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h">
 			<Option target="ZMPO_3"/>
 		</Unit>
-		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/values.h">
+		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h">
 			<Option target="ZMPO_3"/>
 		</Unit>
 		<Unit filename="/home/monteth/Documents/CLionProjects/ZMPO-3/main.cpp">

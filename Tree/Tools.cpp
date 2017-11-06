@@ -45,8 +45,7 @@ int Tools::getQuantOfChildren(std::string inputString) {
 bool Tools::isVariable(std::string inputString) {
     bool isVar = true;
     if (!Tools::isInt(inputString) && !Tools::isOperator(inputString)) {
-        for (int i = 0; i < inputString.length(); ++i) {
-            char checkingChar = inputString[i];
+        for (char checkingChar : inputString) {
             if (!isCapitalLetter(checkingChar) && !isSmallLetter(checkingChar) && !isDigit(checkingChar)) {
                 isVar = false;
             }

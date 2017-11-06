@@ -6,10 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.cpp
+string
+-
+iostream
+-
+Interface.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
+Values.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h
+Tree/Tree.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
+Tree/Tools.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.h
+
+/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
+
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.cpp
 iostream
 -
 cmath
+-
+string.h
 -
 Node.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.h
@@ -29,6 +47,8 @@ string
 -
 
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.cpp
+iostream
+-
 Tree.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
 
@@ -36,11 +56,17 @@ Tree.h
 Node.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.h
 
+/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h
+string
+-
+
 /home/monteth/Documents/CLionProjects/ZMPO-3/main.cpp
 iostream
 -
 Tree/Tree.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
+Tree/Node.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Node.h
 Tree/Tools.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.h
 cmath

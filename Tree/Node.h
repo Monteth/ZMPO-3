@@ -10,17 +10,24 @@
 
 class Node {
 public:
+    Node();
     Node(Node &otherNode);
     Node(const std::string *inputArray, int &actualIndex, int maxIndex);
+
+    void join(const std::string *inputArray, int &actualIndex, int maxIndex);
     void updateVariables(std::string **variables, int &varLength);
     std::string getPrefix();
     double getResult(int *varValues, std::string *varNames, int arrayLength);
-private:
+
+    Node operator =(Node &otherNode);
     std::string value;
+private:
     Node **children;
     int reqChildQuant;
 
     friend class Tree;
+
+    void del();
 };
 
 

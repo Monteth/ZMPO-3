@@ -10,17 +10,25 @@
 
 class Tree {
 public:
+/*    Tree();
+
+    Tree(Tree &otherTree);*/
     void requestTree(const std::string *inputArray, int maxIndex);
     std::string getVariables();
     std::string getPrefix();
-    double getResult(int *varValues, int arrayLength);
+    double getResult(int *varValues);
+    void join(const std::string *inputArray);
+
+    /*Tree operator =(const Tree &other);*/
+
+    void del();
+
 private:
     void updateVariables();
     std::string **variables;
     int varLength;
     Node *root;
 };
-
 
 
 #endif //ZMPO_3_TREE_H

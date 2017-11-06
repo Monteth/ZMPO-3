@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o"
   "CMakeFiles/ZMPO_3.dir/Tree/Node.cpp.o"
   "CMakeFiles/ZMPO_3.dir/Tree/Tools.cpp.o"
+  "CMakeFiles/ZMPO_3.dir/Interface.cpp.o"
   "ZMPO_3.pdb"
   "ZMPO_3"
 )
