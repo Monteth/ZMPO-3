@@ -65,3 +65,21 @@ bool Tools::isSmallLetter(char checkingSign) {
 bool Tools::isDigit(char checkingSign) {
     return checkingSign >= '0' && checkingSign <= '9';
 }
+
+
+bool Tools::tabIsInt(std::string *array, int offset, int arrayLength) {
+    bool areInts = true;
+    for (int i = offset; (i < arrayLength) && areInts; ++i) {
+        if (!Tools::isInt(array[i])) areInts = false;
+    }
+    return areInts;
+}
+
+int *Tools::strToIntArray(std::string *commandsArray, int startOffset, int arrayLength) {
+    auto result = new int[arrayLength];
+    int offset = startOffset;
+    for (int i = 0; offset < arrayLength; ++i, offset++) {
+        result[i] = stoi(commandsArray[offset]);
+    }
+    return result;
+}

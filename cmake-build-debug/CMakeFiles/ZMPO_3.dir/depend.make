@@ -19,8 +19,10 @@ CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o: ../Tree/Node.h
 CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o: ../Tree/Tree.cpp
 CMakeFiles/ZMPO_3.dir/Tree/Tree.cpp.o: ../Tree/Tree.h
 
+CMakeFiles/ZMPO_3.dir/main.cpp.o: ../Interface.h
 CMakeFiles/ZMPO_3.dir/main.cpp.o: ../Tree/Node.h
 CMakeFiles/ZMPO_3.dir/main.cpp.o: ../Tree/Tools.h
 CMakeFiles/ZMPO_3.dir/main.cpp.o: ../Tree/Tree.h
+CMakeFiles/ZMPO_3.dir/main.cpp.o: ../Values.h
 CMakeFiles/ZMPO_3.dir/main.cpp.o: ../main.cpp
 

@@ -10,18 +10,14 @@
 
 class Tree {
 public:
-/*    Tree();
-
-    Tree(Tree &otherTree);*/
-    void requestTree(const std::string *inputArray, int maxIndex);
+    Tree();
+    ~Tree();
+    int requestTree(const std::string *inputArray, int maxIndex);
     std::string getVariables();
     std::string getPrefix();
     double getResult(int *varValues);
-    void join(const std::string *inputArray);
-
-    /*Tree operator =(const Tree &other);*/
-
-    void del();
+    int join(const std::string *inputArray, int arrayLength);
+    int getQuantOfVal();
 
 private:
     void updateVariables();

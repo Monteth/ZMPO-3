@@ -4,7 +4,10 @@
 
 #ifndef ZMPO_3_INTERFACE_H
 #define ZMPO_3_INTERFACE_H
-
+#include "Values.h"
+#include <iostream>
+#include "Tree/Tree.h"
+#include "Tree/Tools.h"
 
 class Interface {
 public:
@@ -18,9 +21,7 @@ private:
 
     void printHelp();
 
-    bool tabIsInt(std::string *array, int offset);
 
-    int *strToIntArray(std::string *commandsArray, int startOffset);
 };
 
 

@@ -13,7 +13,7 @@ public:
     Node();
     Node(Node &otherNode);
     Node(const std::string *inputArray, int &actualIndex, int maxIndex);
-
+    ~Node();
     void join(const std::string *inputArray, int &actualIndex, int maxIndex);
     void join(Node &node);
     void updateVariables(std::string **variables, int &varLength);

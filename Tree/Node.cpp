@@ -19,25 +19,39 @@ Node::Node(Node &otherNode) {
     for (int i = 0; i < reqChildQuant; ++i) {
         children[i] = new Node((*otherNode.children[i]));
     }
-    std::cout << "Created copy node: " << value << std::endl;
+    /*std::cout << "Created copy node: " << value << std::endl;*/
 }
 
 Node::Node() {
     children = new Node*[0];
     value = "";
     reqChildQuant = 0;
-    std::cout << "Created def node" << value << std::endl;
+    /*std::cout << "Created def node" << value << std::endl;*/
 }
 
 Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex) {
-    this->value = inputArray[actualIndex];
-    reqChildQuant = Tools::getQuantOfChildren(value);
-    children = new Node*[reqChildQuant];
-    actualIndex++;
-    std::cout << "Created node: " << value << std::endl;
-    for (int i = 0; i < reqChildQuant; ++i) {
-        children[i] = new Node(inputArray, actualIndex, maxIndex);
+    if (actualIndex >= maxIndex){
+        this->value = "1";
+        reqChildQuant = 0;
+        actualIndex++;
+    } else{
+        this->value = inputArray[actualIndex];
+        reqChildQuant = Tools::getQuantOfChildren(value);
+        children = new Node*[reqChildQuant];
+        actualIndex++;
+        /*std::cout << "Created node: " << value << std::endl;*/
+        for (int i = 0; i < reqChildQuant; ++i) {
+            children[i] = new Node(inputArray, actualIndex, maxIndex);
+        }
     }
+}
+
+Node::~Node() {
+    for (int i = 0; i < reqChildQuant; ++i) {
+        delete children[i];
+    }
+    delete []children;
+
 }
 
 void Node::updateVariables(std::string **variables, int &varLength) {
@@ -101,7 +115,7 @@ double Node::getResult(int *varValues, std::string *varNames, int arrayLength) {
             result = cos(children[0]->getResult(varValues, varNames, arrayLength));
         }
     }
-    std::cout << this->value << "result :"<<result<< std::endl;
+    /*std::cout << this->value << "result :"<<result<< std::endl;*/
     return result;
 }
 
@@ -111,7 +125,7 @@ void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex) {
         reqChildQuant = Tools::getQuantOfChildren(value);
         children = new Node*[reqChildQuant];
         actualIndex++;
-        std::cout << "Created node: " << value << std::endl;
+        /*std::cout << "Created node: " << value << std::endl;*/
         for (int i = 0; i < reqChildQuant; ++i) {
             children[i] = new Node(inputArray, actualIndex, maxIndex);
         }
@@ -128,7 +142,7 @@ void Node::join(Node &node) {
         for (int i = 0; i < reqChildQuant; ++i) {
             children[i] = new Node((*node.children[i]));
         }
-        std::cout << "Created copy node: " << value << std::endl;
+        /*std::cout << "Created copy node: " << value << std::endl;*/
     } else {
         children[0]->join(node);
     }
@@ -147,6 +161,6 @@ Node& Node::operator =(Node &otherNode) {
     for (int i = 0; i < reqChildQuant; ++i) {
         children[i] = new Node((*otherNode.children[i]));
     }
-    std::cout << "Created copy node: " << value << std::endl;
+    /*std::cout << "Created copy node: " << value << std::endl;*/
     return *this;
 }

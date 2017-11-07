@@ -2,11 +2,13 @@
 // Created by monteth on 11/5/17.
 //
 
-#include <iostream>
-#include "Tree/Tree.h"
-#include "Tree/Tools.h"
+
 #include "Interface.h"
-#include "Values.h"
+
+
+
+//TODO: add autofix for join
+
 
 using namespace std;
 
@@ -28,22 +30,53 @@ void Interface::start() {
 
         if (line == sEND) {
             end = true;
-            tree.del();
 
         } else if (line == sHELP) {
             printHelp();
 
+        } else if (line == sVARS) {
+            std::cout << tree.getVariables() << std::endl;
+
+        } else if (command == sJOIN) {
+            int score = tree.join(commandsArray, commandsLength);
+            std::string response;
+            switch (score){
+                case -1: response = sREQUEST_RESPONSE_LITTLE;
+                    break;
+                case 0: response = sREQUEST_RESPONSE_OK;
+                    break;
+                case 1: response = sREQUEST_RESPONSE_MUCH;
+                    break;
+                default:break;
+            }
+            std::cout << response << std::endl << sTHIS_IS_YOUR_EXPRESSION << tree.getPrefix() << std::endl;
         } else if (command == sEnter) {
-            tree.requestTree(commandsArray + 1, commandsArray->length());
+            int score = tree.requestTree(commandsArray, commandsLength);
+            std::string response;
+            switch (score){
+                case -1: response = sREQUEST_RESPONSE_LITTLE;
+                    break;
+                case 0: response = sREQUEST_RESPONSE_OK;
+                    break;
+                case 1: response = sREQUEST_RESPONSE_MUCH;
+                    break;
+                default:break;
+            }
+            std::cout << response << std::endl << sTHIS_IS_YOUR_EXPRESSION << tree.getPrefix() << std::endl;
         } else if (line == sPRINT) {
             std::cout << tree.getPrefix() << std::endl;
         } else if (command == sCOMP) {
-            if (commandsLength == tree.getVariables().length() + 1) {
-                if (tabIsInt(commandsArray, 1)) {
-                    int *variables = strToIntArray(commandsArray, 1);
-                    tree.getResult(variables);
+            if (commandsLength == tree.getQuantOfVal() + 1) {
+                if (tree.getQuantOfVal() == 0){
+                    std::cout << sEXP_RESULT <<  tree.getResult(new int[0]) << std::endl;
+                }else
+                if (Tools::tabIsInt(commandsArray, 1, commandsLength)) {
+                    int *variables = Tools::strToIntArray(commandsArray, 1, commandsLength);
+                    std::cout << sEXP_RESULT << tree.getResult(variables) << std::endl;
                 }
             }
+        } else if (line == sEXIT){
+            end = true;
         }
     } while (!end);
 }
@@ -79,22 +112,6 @@ void Interface::push(string *&array, int length, string newWord) {
 }
 
 void Interface::printHelp() {
-
+    std::cout << HELP_TO_PRINT << std::endl;
 }
 
-bool Interface::tabIsInt(string *array, int offset) {
-    bool areInts = true;
-    for (int i = offset; i < (array->length() + offset) && areInts; ++i) {
-        if (!Tools::isInt(array[i])) areInts = false;
-    }
-    return areInts;
-}
-
-int *Interface::strToIntArray(string *commandsArray, int startOffset) {
-    auto result = new int[commandsArray->length()];
-    int offset = startOffset;
-    for (int i = 0; i < commandsArray->length(); ++i, offset++) {
-        result[i] = stoi(commandsArray[offset]);
-    }
-    return result;
-}

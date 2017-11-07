@@ -14,6 +14,8 @@ public:
     static bool isVariable(std::string inputString);
     static bool isInt(std::string inputString);
     static int getQuantOfChildren(std::string inputString);
+    static bool tabIsInt(std::string *array, int offset, int arrayLength);
+    static int *strToIntArray(std::string *commandsArray, int startOffset, int arrayLength);
 
 private:
     static bool isDigit(char checkingSign);
