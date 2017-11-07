@@ -7,18 +7,16 @@
 #IncludeRegexTransform: 
 
 /home/monteth/Documents/CLionProjects/ZMPO-3/Interface.cpp
-string
--
 iostream
 -
-Interface.h
-/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
-Values.h
-/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h
 Tree/Tree.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
 Tree/Tools.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.h
+Interface.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
+Values.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h
 
 /home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
 

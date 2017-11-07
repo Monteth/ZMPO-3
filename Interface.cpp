@@ -2,14 +2,14 @@
 // Created by monteth on 11/5/17.
 //
 
-#include <string>
 #include <iostream>
-#include "Interface.h"
-#include "Values.h"
 #include "Tree/Tree.h"
 #include "Tree/Tools.h"
+#include "Interface.h"
+#include "Values.h"
 
 using namespace std;
+
 
 void Interface::start() {
     std::string line;

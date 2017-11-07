@@ -2,20 +2,8 @@
 
 #include <iostream>
 #include <cmath>
-#include <string.h>
 #include "Node.h"
 #include "Tools.h"
-
-/*Node::Node() {}
-
-Node::Node(Node &otherNode) {
-    this->value = otherNode.value;
-    this->reqChildQuant = otherNode.reqChildQuant;
-    children = new Node*[reqChildQuant];
-    for (int i = 0; i < reqChildQuant; ++i) {
-        (*children)[i] = Node(reinterpret_cast<Node &>(otherNode.children[i]));
-    }
-}*/
 
 void Node::del() {
     for (int i = 0; i < reqChildQuant; ++i) {
@@ -29,7 +17,7 @@ Node::Node(Node &otherNode) {
     reqChildQuant = otherNode.reqChildQuant;
     children = new Node*[reqChildQuant];
     for (int i = 0; i < reqChildQuant; ++i) {
-        (*children) = new Node((*otherNode.children[i]));
+        children[i] = new Node((*otherNode.children[i]));
     }
     std::cout << "Created copy node: " << value << std::endl;
 }
@@ -132,6 +120,33 @@ void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex) {
     }
 }
 
-Node Node::operator=(Node &otherNode) {
-    return Node(otherNode);
+void Node::join(Node &node) {
+    if (Tools::isVariable(this->value) || Tools::isInt(this->value)){
+        this->value = node.value;
+        reqChildQuant = node.reqChildQuant;
+        children = new Node*[reqChildQuant];
+        for (int i = 0; i < reqChildQuant; ++i) {
+            children[i] = new Node((*node.children[i]));
+        }
+        std::cout << "Created copy node: " << value << std::endl;
+    } else {
+        children[0]->join(node);
+    }
+}
+
+Node& Node::operator+(Node &otherNode) {
+    Node *resultNode = new Node(*this);
+    (*resultNode).join(otherNode);
+    return *resultNode;
+}
+
+Node& Node::operator =(Node &otherNode) {
+    this->value = otherNode.value;
+    reqChildQuant = otherNode.reqChildQuant;
+    children = new Node*[reqChildQuant];
+    for (int i = 0; i < reqChildQuant; ++i) {
+        children[i] = new Node((*otherNode.children[i]));
+    }
+    std::cout << "Created copy node: " << value << std::endl;
+    return *this;
 }

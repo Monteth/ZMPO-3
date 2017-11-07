@@ -14,7 +14,12 @@ int main() {
     array2[3] = "3";
     Node node1(array2, index, 4);
     Node node2 = node1;
-    std::cout << node1.value;
+    Node node3;
+    node3 = node1 + node2;
+    std::cout << node3.value << std::endl;
+    std::cout <<"node3 prefix:" << node3.getPrefix() << std::endl;
+    std::cout << "(node1 + node2) prefix:" <<(node1+node2).getPrefix() << std::endl;
+    //std::cout << node3.getPrefix() << std::endl;
 
     /*Node *node = new Node(array2, index, 2);
     Node *node_copy = new Node[1];
