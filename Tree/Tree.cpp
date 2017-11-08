@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include "Tree.h"
 #include "../Values.h"
 
@@ -10,6 +11,12 @@ Tree::Tree() {
 }
 
 Tree::~Tree() {
+    del();
+}
+
+
+
+void Tree::del() {
     for (int i = 0; i < varLength; ++i) {
         delete variables[i];
     }
@@ -18,6 +25,7 @@ Tree::~Tree() {
 }
 
 int Tree::requestTree(const std::string *inputArray, int maxIndex, bool &isInvalidWord) {
+    del();
     int actualIndex = 1;
     this->root = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
     this->variables = new std::string*[0];
@@ -56,7 +64,7 @@ void Tree::updateVariables() {
 int Tree::join(const std::string *inputArray, int arrayLength, bool &isInvalidWord) {
     int actualIndex = 1;
     Node *smallRoot = new Node(inputArray, actualIndex, arrayLength, isInvalidWord);
-    root->join((*smallRoot));
+    (*root) = (*root) + (*smallRoot);
     int result = 0;
     if (actualIndex < arrayLength) result = 1;
     if (actualIndex > arrayLength) result = -1;
@@ -67,4 +75,15 @@ int Tree::join(const std::string *inputArray, int arrayLength, bool &isInvalidWo
 int Tree::getQuantOfVal() {
     updateVariables();
     return varLength;
+}
+
+std::string Tree::getLevels() {
+
+    int depth = 0;
+    this->root->countDepth(depth, 0);
+    std::string result = "";
+    for (int j = 0; j <= depth; ++j) {
+        result += root->getLevel(j) + "\n";
+    }
+    return result;
 }

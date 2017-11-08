@@ -27,6 +27,8 @@ void Interface::start() {
         } else if (line == sHELP) {
             printHelp();
 
+        }else if (line == "print_levels") {
+            std::cout << tree.getLevels();
         } else if (line == sVARS) {
             std::cout << tree.getVariables() << std::endl;
 

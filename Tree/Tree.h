@@ -18,13 +18,16 @@ public:
     double getResult(int *varValues);
     int join(const std::string *inputArray, int arrayLength, bool &isInvalidWord);
     int getQuantOfVal();
+    std::string getLevels();
 
 private:
+    void del();
     void updateVariables();
     std::string **variables;
     int varLength;
     Node *root;
 };
+
 
 
 #endif //ZMPO_3_TREE_H

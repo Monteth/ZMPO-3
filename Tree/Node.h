@@ -20,14 +20,20 @@ public:
     std::string getPrefix();
     double getResult(int *varValues, std::string *varNames, int arrayLength);
 
-    Node & operator =(Node &otherNode);
+    void operator =(Node &otherNode);
     Node & operator +(Node &otherNode);
+
+    std::string getLevel(int lvl);
 
     std::string value;
 private:
     Node **children;
     int reqChildQuant;
+    bool visited;
     friend class Tree;
+    int lvl;
+
+    int countDepth(int &depth, int i);
 };
 
 

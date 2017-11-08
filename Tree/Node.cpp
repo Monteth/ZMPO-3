@@ -12,14 +12,14 @@ Node::Node(Node &otherNode) {
     for (int i = 0; i < reqChildQuant; ++i) {
         children[i] = new Node((*otherNode.children[i]));
     }
-    /*std::cout << "Created copy node: " << value << std::endl;*/
+    visited = false;
 }
 
 Node::Node() {
     children = new Node*[0];
     value = "";
     reqChildQuant = 0;
-    /*std::cout << "Created def node" << value << std::endl;*/
+    visited = false;
 }
 
 Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord) {
@@ -36,11 +36,11 @@ Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &
         reqChildQuant = Tools::getQuantOfChildren(value);
         children = new Node*[reqChildQuant];
         actualIndex++;
-        /*std::cout << "Created node: " << value << std::endl;*/
         for (int i = 0; i < reqChildQuant; ++i) {
             children[i] = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
         }
     }
+    visited = false;
 }
 
 Node::~Node() {
@@ -112,7 +112,6 @@ double Node::getResult(int *varValues, std::string *varNames, int arrayLength) {
             result = cos(children[0]->getResult(varValues, varNames, arrayLength));
         }
     }
-    /*std::cout << this->value << "result :"<<result<< std::endl;*/
     return result;
 }
 
@@ -122,7 +121,6 @@ void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex, b
         reqChildQuant = Tools::getQuantOfChildren(value);
         children = new Node*[reqChildQuant];
         actualIndex++;
-        /*std::cout << "Created node: " << value << std::endl;*/
         for (int i = 0; i < reqChildQuant; ++i) {
             children[i] = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
         }
@@ -148,13 +146,31 @@ Node& Node::operator+(Node &otherNode) {
     return *resultNode;
 }
 
-Node& Node::operator =(Node &otherNode) {
+void Node::operator =(Node &otherNode) {
     this->value = otherNode.value;
     reqChildQuant = otherNode.reqChildQuant;
     children = new Node*[reqChildQuant];
     for (int i = 0; i < reqChildQuant; ++i) {
         children[i] = new Node((*otherNode.children[i]));
     }
-    /*std::cout << "Created copy node: " << value << std::endl;*/
-    return *this;
+}
+
+std::string Node::getLevel(int lvl){
+    std::string result = "";
+    if (lvl == 0){
+        result = this->value;
+    } else {
+        for (int i = 0; i < this->reqChildQuant; ++i) {
+            result += children[i]->getLevel(lvl-1);
+        }
+    }
+    return result;
+}
+
+int Node::countDepth(int &depth, int lvl){
+    this->lvl = lvl;
+    for (int i = 0; i < this->reqChildQuant; ++i) {
+        children[i]->countDepth(depth, lvl + 1);
+    }
+    if (this->lvl > depth) depth = this->lvl;
 }
