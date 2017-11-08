@@ -28,8 +28,6 @@ private:
     Node **children;
     int reqChildQuant;
     friend class Tree;
-
-    void del();
 };
 
 

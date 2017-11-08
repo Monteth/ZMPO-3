@@ -55,7 +55,8 @@ void Tree::updateVariables() {
 
 int Tree::join(const std::string *inputArray, int arrayLength, bool &isInvalidWord) {
     int actualIndex = 1;
-    root->join(inputArray, actualIndex, arrayLength, isInvalidWord);
+    Node *smallRoot = new Node(inputArray, actualIndex, arrayLength, isInvalidWord);
+    root->join((*smallRoot));
     int result = 0;
     if (actualIndex < arrayLength) result = 1;
     if (actualIndex > arrayLength) result = -1;

@@ -5,13 +5,6 @@
 #include "Node.h"
 #include "Tools.h"
 
-void Node::del() {
-    for (int i = 0; i < reqChildQuant; ++i) {
-        children[i]->del();
-    }
-    delete []children;
-}
-
 Node::Node(Node &otherNode) {
     this->value = otherNode.value;
     reqChildQuant = otherNode.reqChildQuant;
@@ -139,16 +132,13 @@ void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex, b
 }
 
 void Node::join(Node &node) {
-    if (Tools::isVariable(this->value) || Tools::isInt(this->value)){
-        this->value = node.value;
-        reqChildQuant = node.reqChildQuant;
-        children = new Node*[reqChildQuant];
-        for (int i = 0; i < reqChildQuant; ++i) {
-            children[i] = new Node((*node.children[i]));
+    if (this->reqChildQuant > 0){
+        if (Tools::isVariable(children[0]->value) || Tools::isInt(children[0]->value)){
+            delete children[0];
+            children[0] = new Node(node);
+        } else{
+            children[0]->join(node);
         }
-        /*std::cout << "Created copy node: " << value << std::endl;*/
-    } else {
-        children[0]->join(node);
     }
 }
 
