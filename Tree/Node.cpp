@@ -12,14 +12,12 @@ Node::Node(Node &otherNode) {
     for (int i = 0; i < reqChildQuant; ++i) {
         children[i] = new Node((*otherNode.children[i]));
     }
-    visited = false;
 }
 
 Node::Node() {
     children = new Node*[0];
     value = "";
     reqChildQuant = 0;
-    visited = false;
 }
 
 Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord) {
@@ -40,7 +38,6 @@ Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &
             children[i] = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
         }
     }
-    visited = false;
 }
 
 Node::~Node() {

@@ -14,8 +14,6 @@ Tree::~Tree() {
     del();
 }
 
-
-
 void Tree::del() {
     for (int i = 0; i < varLength; ++i) {
         delete variables[i];

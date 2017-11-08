@@ -5,9 +5,6 @@
 #ifndef ZMPO_3_NODE_H
 #define ZMPO_3_NODE_H
 
-
-
-
 class Node {
 public:
     Node();
@@ -29,7 +26,6 @@ public:
 private:
     Node **children;
     int reqChildQuant;
-    bool visited;
     friend class Tree;
     int lvl;
 
