@@ -29,19 +29,23 @@ Node::Node() {
     /*std::cout << "Created def node" << value << std::endl;*/
 }
 
-Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex) {
+Node::Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord) {
     if (actualIndex >= maxIndex){
         this->value = "1";
         reqChildQuant = 0;
         actualIndex++;
     } else{
+        while (!(Tools::isInt(inputArray[actualIndex]) || Tools::isVariable(inputArray[actualIndex]) || Tools::isOperator(inputArray[actualIndex])) &&  (actualIndex < maxIndex)){
+            actualIndex++;
+            isInvalidWord = true;
+        }
         this->value = inputArray[actualIndex];
         reqChildQuant = Tools::getQuantOfChildren(value);
         children = new Node*[reqChildQuant];
         actualIndex++;
         /*std::cout << "Created node: " << value << std::endl;*/
         for (int i = 0; i < reqChildQuant; ++i) {
-            children[i] = new Node(inputArray, actualIndex, maxIndex);
+            children[i] = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
         }
     }
 }
@@ -119,7 +123,7 @@ double Node::getResult(int *varValues, std::string *varNames, int arrayLength) {
     return result;
 }
 
-void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex) {
+void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord) {
     if (Tools::isVariable(this->value) || Tools::isInt(this->value)){
         this->value = inputArray[actualIndex];
         reqChildQuant = Tools::getQuantOfChildren(value);
@@ -127,10 +131,10 @@ void Node::join(const std::string *inputArray, int &actualIndex, int maxIndex) {
         actualIndex++;
         /*std::cout << "Created node: " << value << std::endl;*/
         for (int i = 0; i < reqChildQuant; ++i) {
-            children[i] = new Node(inputArray, actualIndex, maxIndex);
+            children[i] = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
         }
     } else {
-            children[0]->join(inputArray, actualIndex, maxIndex);
+            children[0]->join(inputArray, actualIndex, maxIndex, isInvalidWord);
     }
 }
 

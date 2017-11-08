@@ -1,14 +1,7 @@
 //
 // Created by monteth on 11/5/17.
 //
-
-
 #include "Interface.h"
-
-
-
-//TODO: add autofix for join
-
 
 using namespace std;
 
@@ -38,7 +31,8 @@ void Interface::start() {
             std::cout << tree.getVariables() << std::endl;
 
         } else if (command == sJOIN) {
-            int score = tree.join(commandsArray, commandsLength);
+            bool isInvalidWord = false;
+            int score = tree.join(commandsArray, commandsLength, isInvalidWord);
             std::string response;
             switch (score){
                 case -1: response = sREQUEST_RESPONSE_LITTLE;
@@ -51,7 +45,8 @@ void Interface::start() {
             }
             std::cout << response << std::endl << sTHIS_IS_YOUR_EXPRESSION << tree.getPrefix() << std::endl;
         } else if (command == sEnter) {
-            int score = tree.requestTree(commandsArray, commandsLength);
+            bool isInvalidWord = false;
+            int score = tree.requestTree(commandsArray, commandsLength, isInvalidWord);
             std::string response;
             switch (score){
                 case -1: response = sREQUEST_RESPONSE_LITTLE;
@@ -61,6 +56,9 @@ void Interface::start() {
                 case 1: response = sREQUEST_RESPONSE_MUCH;
                     break;
                 default:break;
+            }
+            if (isInvalidWord){
+                std::cout << sINVALID_WORD << std::endl;
             }
             std::cout << response << std::endl << sTHIS_IS_YOUR_EXPRESSION << tree.getPrefix() << std::endl;
         } else if (line == sPRINT) {
@@ -74,6 +72,8 @@ void Interface::start() {
                     int *variables = Tools::strToIntArray(commandsArray, 1, commandsLength);
                     std::cout << sEXP_RESULT << tree.getResult(variables) << std::endl;
                 }
+            }else {
+                std::cout << sVARS_PREP2 << tree.getQuantOfVal() << sVARS_PREP3 << std::endl;
             }
         } else if (line == sEXIT){
             end = true;

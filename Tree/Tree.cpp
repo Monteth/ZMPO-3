@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Tree.h"
-
+#include "../Values.h"
 
 
 Tree::Tree() {
@@ -17,9 +17,9 @@ Tree::~Tree() {
     delete root;
 }
 
-int Tree::requestTree(const std::string *inputArray, int maxIndex) {
+int Tree::requestTree(const std::string *inputArray, int maxIndex, bool &isInvalidWord) {
     int actualIndex = 1;
-    this->root = new Node(inputArray, actualIndex, maxIndex);
+    this->root = new Node(inputArray, actualIndex, maxIndex, isInvalidWord);
     this->variables = new std::string*[0];
     this->varLength = 0;
     int result = 0;
@@ -30,7 +30,7 @@ int Tree::requestTree(const std::string *inputArray, int maxIndex) {
 
 std::string Tree::getVariables() {
     updateVariables();
-    std::string result = "Variables: ";
+    std::string result = sVARS_PREP;
     for (int i = 0; i < varLength; ++i) {
         result += (*variables)[i];
         if (i != varLength-1){
@@ -53,9 +53,9 @@ void Tree::updateVariables() {
     this->root->updateVariables(variables,varLength);
 }
 
-int Tree::join(const std::string *inputArray, int arrayLength) {
+int Tree::join(const std::string *inputArray, int arrayLength, bool &isInvalidWord) {
     int actualIndex = 1;
-    root->join(inputArray, actualIndex, arrayLength);
+    root->join(inputArray, actualIndex, arrayLength, isInvalidWord);
     int result = 0;
     if (actualIndex < arrayLength) result = 1;
     if (actualIndex > arrayLength) result = -1;

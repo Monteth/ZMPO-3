@@ -12,9 +12,9 @@ class Node {
 public:
     Node();
     Node(Node &otherNode);
-    Node(const std::string *inputArray, int &actualIndex, int maxIndex);
+    Node(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord);
     ~Node();
-    void join(const std::string *inputArray, int &actualIndex, int maxIndex);
+    void join(const std::string *inputArray, int &actualIndex, int maxIndex, bool &isInvalidWord);
     void join(Node &node);
     void updateVariables(std::string **variables, int &varLength);
     std::string getPrefix();

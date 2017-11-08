@@ -12,11 +12,11 @@ class Tree {
 public:
     Tree();
     ~Tree();
-    int requestTree(const std::string *inputArray, int maxIndex);
+    int requestTree(const std::string *inputArray, int maxIndex, bool &isInvalidWord);
     std::string getVariables();
     std::string getPrefix();
     double getResult(int *varValues);
-    int join(const std::string *inputArray, int arrayLength);
+    int join(const std::string *inputArray, int arrayLength, bool &isInvalidWord);
     int getQuantOfVal();
 
 private:

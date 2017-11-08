@@ -9,8 +9,6 @@
 /home/monteth/Documents/CLionProjects/ZMPO-3/Interface.cpp
 Interface.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
-Tree/Tools.h
-/home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tools.h
 
 /home/monteth/Documents/CLionProjects/ZMPO-3/Interface.h
 Values.h
@@ -47,6 +45,8 @@ iostream
 -
 Tree.h
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
+../Values.h
+/home/monteth/Documents/CLionProjects/ZMPO-3/Values.h
 
 /home/monteth/Documents/CLionProjects/ZMPO-3/Tree/Tree.h
 Node.h
