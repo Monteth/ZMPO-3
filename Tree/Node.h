@@ -22,8 +22,9 @@ public:
 
     std::string getLevel(int lvl);
 
-    std::string value;
+
 private:
+    std::string value;
     Node **children;
     int reqChildQuant;
     friend class Tree;

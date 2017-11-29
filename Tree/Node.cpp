@@ -10,7 +10,7 @@ Node::Node(Node &otherNode) {
     reqChildQuant = otherNode.reqChildQuant;
     children = new Node*[reqChildQuant];
     for (int i = 0; i < reqChildQuant; ++i) {
-        children[i] = new Node((*otherNode.children[i]));
+        children[i] = new Node(*otherNode.children[i]);
     }
 }
 
