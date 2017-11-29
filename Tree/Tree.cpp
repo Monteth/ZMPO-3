@@ -58,7 +58,7 @@ double Tree::getResult(int *varValues) {
 void Tree::updateVariables() {
     delete []variables;
     varLength = 0;
-    variables = new std::string*(0);
+    variables = new std::string*[0];
     this->root->updateVariables(variables,varLength);
 }
 
